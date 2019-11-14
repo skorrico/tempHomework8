@@ -1,0 +1,124 @@
+#current, #nav-home{
+    background-color:  #a5d0ee;
+    color: black;
+}
+#modalDiv{
+    margin: auto;
+    top: 50px;
+}
+.modal-header{
+    background-color: #6e91aa;
+}
+.modal-body, .modal-footer{
+    background-color: #a5d0ee;
+    /* overflow: hidden; */
+}
+button{
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+#rightModal{
+    float: right;
+    width:auto;
+}
+#rightModal label{
+    font-weight: normal;
+}
+#leftModal{
+    width: 65%;
+    float: left;
+}
+#icon-right{
+    width: 35%;
+    float: right;
+}
+#modalButton{
+    display: none;
+}
+#cityModal, #tempModal{
+    font-size: 30px;
+    width: 100%;
+}
+#summary{
+    font-size: 20px
+}
+.material-icons.color_yellow { 
+    color: yellow; 
+}
+#horizontal{
+    width:100%;
+}
+.img-fluid {
+    min-width: 20px;
+    min-height: 20px;
+}
+#right{
+    /* max-height: 200px !important;
+    max-width: 200px !important; */
+    min-height: 20px;
+    min-width: 20px;
+    float: right;
+}
+/* #outsideContainer{
+    min-width: 100%; 
+    min-height: 150px;
+}
+#chartContainer{
+    width: 100%;
+} */
+.text-responsive {
+    font-size: calc(100% + 1vw + 1vh);
+  }
+@media screen and (max-width:2000px){
+    #chartContainer{
+        width: 70%;
+        height: 300px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        display: block;
+        margin: auto;
+        text-align:center;
+    }
+    .img-fluid{
+        min-height: 20px;
+        min-width: 20px;
+    }
+}
+@media screen and (min-width:414px){
+    #chartContainer{
+        width: 70%;
+        height: 200px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        display: block;
+        margin:  auto;
+        /* text-align:center; */
+    }
+    #city, #left{
+        font-size: 4vw;
+    }
+}
+#city, #left{
+    font-size: 3vw;
+}
+
+#chartContainer{
+    width: 70%;
+    height: 300px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: block;
+    /* margin:  auto; */
+    text-align:center;
+}
+canvas{
+    margin: 0 auto;
+}
+#mymodal{
+    margin-top: 100px;
+    
+}
+.modal-content{
+    position: absolute;
+}

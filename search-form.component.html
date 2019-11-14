@@ -1,0 +1,63 @@
+<div class="jumbotron mt-5" id="search-form-div">
+    <div class="">
+            <div class="a pt-5">
+                <h1 class="text-center">Weather Search</h1>
+                <form class="ml-3 mr-3" (ngSubmit)="onSubmit()" [formGroup]="searchForm">
+                        <div class="form-group row justify-content-left">
+                            <label for="streetName" class="control-label col-sm-2 offset-sm-2">Street <span class="required">*</span></label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="streetName" formControlName="streetName" placeholder="Enter Street Name" [attr.disabled]="checkbox">
+                                <div  *ngIf="!searchForm.value.streetName && this.searchForm.controls.streetName.touched">
+                                    <div class="form-error text-danger" >Please enter a Street Name</div></div>
+
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-left">
+                            <label for="cityName" class="control-label col-sm-2 offset-sm-2">City <span class="required">*</span> </label>
+                            
+                            <div class="col-sm-4">
+                                <!-- <input type="text" class="form-control" id="cityName" placeholder="Enter City Name" formControlName="cityName" [attr.disabled]="checkbox"> -->
+                                <input id="cityName" placeholder="Enter City Name" type="text" class="form-control" formControlName="cityName" [ngbTypeahead]="search" [attr.disabled]="checkbox"/>
+                                <div *ngIf="!searchForm.value.cityName && searchForm.controls.cityName.touched">
+                                    <div class="form-error text-danger">Please enter a City Name</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-left">
+                            <label for="state" class="control-label col-sm-2 offset-sm-2 ">State: <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="custom-select" id="state" required formControlName="state" [attr.disabled]="checkbox">     
+                                        <option *ngFor="let state of states">{{state}}</option>  
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row justify-content-left">
+                            <label for="location" class="control-label1 col-sm-2"></label>
+                            <div class="col-sm-4">
+                                <input formControlName="lat" style="display: none;">
+                                <input formControlName="lon" style="display: none;">
+                                <input formControlName="cityHidden" style="display: none;">
+                                <input formControlName="stateHidden" style="display: none;">
+                                <label><input type="checkbox"  class="" id="location" value="location" formControlName="location" (click)="disable()"> Current Location</label>
+                            </div>
+                        </div>
+                        <div class="form-group row ">
+                            <div class="col-sm-10 offset-sm-2">
+                            <div id="buttons" class="control-label 3 mb-4 mx-2 ">
+                              <button type="submit" class="btn btn-default btn-space" [disabled]="(searchForm.invalid && !searchCheckBox) || (searchForm.valid && searchCheckBox)">
+                                  <i class="material-icons">search</i> Search</button>
+                              <button type="reset" class="btn btn-default btn-space" (click)="clear()">
+                                  <i class="material-icons">clear_all</i>Clear</button>
+                                </div>
+                            </div>
+                        </div>
+                </form>
+            </div>
+    </div>
+</div>
+<!-- <div class="text-center">
+        <button type="button" class="btn btn-primary">Results</button>
+        <button type="button" class="btn btn-secondary">Favorites</button>
+</div> -->
+<app-favorite></app-favorite>
+<router-outlet></router-outlet>

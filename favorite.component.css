@@ -1,0 +1,43 @@
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #a5d0ee; 
+ }
+
+ .table-striped>tbody>tr:nth-child(even)>td, 
+.table-striped>tbody>tr:nth-child(even)>th {
+   background-color: #6e91aa; 
+ }
+.table-striped thead{
+    background-color: #6e91aa; 
+ }
+ #cityButton{
+     border:none;
+     background: none;
+     color: blue;
+ }
+ .btn-space{
+   margin-right: 5px;
+ }
+ .buttons-spacing{
+   margin-bottom: 10px;
+ }
+ .table-striped{
+  text-align: center;
+ }
+ .table th{
+   text-align: center;
+ }
+ .material-icons.color_yellow { 
+  color: #d3a641; 
+}
+.btn:active,
+.active {
+  color: black !important;
+  background-color: #6e91aa !important;
+  border-color: black !important;
+}
+.btn{
+  color: black !important;
+  /* background-color: #6e91aa !important; */
+  border-color: black !important;
+}

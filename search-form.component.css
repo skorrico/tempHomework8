@@ -1,0 +1,43 @@
+.a{
+    background-color: #6e91aa;
+    color: white;
+}
+h1{
+    justify-content: center;
+}
+.required{
+    color: red;
+}
+.btn-space{
+    margin-right: 5px;
+}
+#buttons{
+    /* padding-left: 150px; */
+}
+.jumbotron{
+    max-width: 800px;
+    /* min-width: 70%; */
+}
+#search-form-div{
+    padding: 0 !important;
+    margin: 0;
+    box-shadow: 4px 4px 4px grey;
+    background-color: #6e91aa;
+    /* max-width: 60%; */
+    /* min-width: 80%; */
+    margin: 0 auto;
+}
+@media screen and (max-width:2000px){
+    .jumbotron{
+        width: 60%;
+    }
+}
+@media screen and (max-width:600px){
+    .jumbotron{
+        /* min-width: 70%; */
+        width: 85%;
+    }
+}
+.material-icons{
+    vertical-align: -5px;
+}

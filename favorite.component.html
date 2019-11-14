@@ -1,0 +1,50 @@
+<div class="text-center buttons-spacing">
+        <button #resultsEl type="button" id="results" class="btn btn-space active" data-toggle="button" (click)="showResults()">Results</button>
+        <button #favEl type="button" id="fav" class="btn btn-space" data-toggle="button" (click)="show()">Favorites</button>
+</div>
+
+<div id="error-div">
+        <div class="container alert alert-warning" role="alert" *ngIf="!favorites && error">
+                No Records!
+        </div>
+        <div class="container" *ngIf="favorites && showTable">
+                <div class="table-responsive-sm">
+                <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">City</th>
+                                    <th scope="col">State</th>
+                                    <th scope="col">Wish List</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let favorite of favoritesData; let i = index">
+                                          <td>
+                                                  {{i+1}}
+                                          </td>
+                                          <td>
+                                                <img src="{{favorite.url}}" style="width: 30px; height:30px">
+                                          </td>
+                                          <td>
+                                                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{favorite.city}}">
+                                                  <button id='cityButton' (click)="favCitySearch(i)">{{favorite.city}}</button>
+                                                </span>
+                                                                                             
+                                          </td>
+                                          <td>
+                                                  {{favorite.state}}
+                                          </td>  
+                                          <td>  
+                                                <button (click)="deleteFavorite(i)">
+                                                         <i class="material-icons color_yellow">delete</i>
+                                                  </button>
+                                          </td>                                      
+                                  </tr>
+                                  
+                                </tbody>
+                </table>
+                </div>     
+        </div>
+</div>
